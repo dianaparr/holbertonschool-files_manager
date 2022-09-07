@@ -28,6 +28,10 @@ class DBClient {
     const result = await countCollection.countDocuments();
     return result;
   }
+
+  async userFind(user) {
+    return this.db.collection('users').findOne(user);
+  }
 }
 
 const dbClient = new DBClient();
